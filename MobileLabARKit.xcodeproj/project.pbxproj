@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EF0683E227B186D00F8981B /* icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF0683D227B186D00F8981B /* icons.swift */; };
+		3EF06842227B3D6D00F8981B /* color slide.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF06841227B3D6D00F8981B /* color slide.png */; };
 		6A59A05B2062B73D007A4DAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A59A05A2062B73D007A4DAD /* AppDelegate.swift */; };
 		6A59A05F2062B73D007A4DAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A59A05E2062B73D007A4DAD /* ViewController.swift */; };
 		6A59A0762062B8B1007A4DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A59A06F2062B8B1007A4DAD /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3EF0683D227B186D00F8981B /* icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = icons.swift; sourceTree = "<group>"; };
+		3EF06841227B3D6D00F8981B /* color slide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "color slide.png"; path = "../../../../class6/mobile-lab-p2p-kit-master/MobileLabP2PKit/Resources/color slide.png"; sourceTree = "<group>"; };
 		6A59A0572062B73D007A4DAD /* MobileLabARKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileLabARKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A59A05A2062B73D007A4DAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A59A05E2062B73D007A4DAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 				6A59A05A2062B73D007A4DAD /* AppDelegate.swift */,
 				6A59A05E2062B73D007A4DAD /* ViewController.swift */,
 				6A59A07B20638EEF007A4DAD /* Utilities.swift */,
+				3EF0683D227B186D00F8981B /* icons.swift */,
 				6A59A06E2062B8B1007A4DAD /* Resources */,
 			);
 			path = MobileLabARKit;
@@ -69,6 +74,7 @@
 		6A59A06E2062B8B1007A4DAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3EF06841227B3D6D00F8981B /* color slide.png */,
 				6A59A0742062B8B1007A4DAD /* art.scnassets */,
 				6A59A0722062B8B1007A4DAD /* Main.storyboard */,
 				6A59A0702062B8B1007A4DAD /* LaunchScreen.storyboard */,
@@ -139,6 +145,7 @@
 			files = (
 				6A59A0782062B8B1007A4DAD /* Main.storyboard in Resources */,
 				6A59A0792062B8B1007A4DAD /* art.scnassets in Resources */,
+				3EF06842227B3D6D00F8981B /* color slide.png in Resources */,
 				6A59A0762062B8B1007A4DAD /* Assets.xcassets in Resources */,
 				6A59A0772062B8B1007A4DAD /* LaunchScreen.storyboard in Resources */,
 			);
@@ -153,6 +160,7 @@
 			files = (
 				6A59A07C20638EEF007A4DAD /* Utilities.swift in Sources */,
 				6A59A05F2062B73D007A4DAD /* ViewController.swift in Sources */,
+				3EF0683E227B186D00F8981B /* icons.swift in Sources */,
 				6A59A05B2062B73D007A4DAD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

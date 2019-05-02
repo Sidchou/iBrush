@@ -25,13 +25,13 @@
                                 </constraints>
                             </arscnView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPj-Xl-b6k">
-                                <rect key="frame" x="0.0" y="488" width="50" height="50"/>
+                                <rect key="frame" x="0.5" y="489" width="49" height="49"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kt8-mH-AmI">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gli-Dd-ZND">
-                                            <rect key="frame" x="2.5" y="2.5" width="45" height="45"/>
+                                            <rect key="frame" x="2" y="2" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" priority="999" constant="45" id="1e1-T1-r8n"/>
                                                 <constraint firstAttribute="width" secondItem="Gli-Dd-ZND" secondAttribute="height" multiplier="1:1" id="ub1-YP-u7K"/>
@@ -131,13 +131,13 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sB6-dr-j5d">
-                                <rect key="frame" x="85" y="265" width="150" height="38"/>
+                                <rect key="frame" x="98.5" y="245" width="123" height="38"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KCp-uq-P63">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="38"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="123" height="38"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vd-17-DcZ">
-                                            <rect key="frame" x="60" y="4" width="30" height="30"/>
+                                            <rect key="frame" x="46.5" y="4" width="30" height="30"/>
                                             <state key="normal" title="Box">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -153,7 +153,7 @@
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="6pc-UY-FCz"/>
-                                    <constraint firstAttribute="width" constant="150" id="YW9-jV-Djm"/>
+                                    <constraint firstAttribute="width" constant="123" id="YW9-jV-Djm"/>
                                 </constraints>
                                 <blurEffect style="light"/>
                                 <userDefinedRuntimeAttributes>
@@ -191,19 +191,10 @@
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cIp-eK-Adh">
-                                <rect key="frame" x="65" y="325" width="191" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-Rs-RdL">
-                                <rect key="frame" x="65" y="377" width="191" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MhL-Z3-lw9">
-                                <rect key="frame" x="135" y="485" width="50" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="EFq-5d-EPY">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="53"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhL-Z3-lw9">
+                                <rect key="frame" x="134.5" y="485" width="51" height="53"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EFq-5d-EPY">
+                                    <rect key="frame" x="0.0" y="0.0" width="51" height="53"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfO-LQ-Qir">
@@ -224,8 +215,63 @@
                                         <constraint firstItem="CfO-LQ-Qir" firstAttribute="leading" secondItem="EFq-5d-EPY" secondAttribute="leading" constant="3" id="qoW-tX-5hn"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="rBH-cx-iA6"/>
+                                </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oyc-Ld-Syz">
+                                <rect key="frame" x="75" y="175" width="171" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="pUq-Ej-3KR">
+                                    <rect key="frame" x="0.0" y="0.0" width="171" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mY7-BS-Ml6">
+                                <rect key="frame" x="76" y="317" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeAlpha:" destination="BV1-FR-VrT" eventType="valueChanged" id="qoc-Fx-xe8"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FAD-eM-0Fi">
+                                <rect key="frame" x="76" y="369" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeSize:" destination="BV1-FR-VrT" eventType="valueChanged" id="niB-9R-oXd"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WbJ-R2-gM0" customClass="Icons" customModule="MobileLabARKit" customModuleProvider="target">
+                                <rect key="frame" x="37" y="312" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LIE-uK-qfY" customClass="Icons" customModule="MobileLabARKit" customModuleProvider="target">
+                                <rect key="frame" x="243" y="312" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="id4-V1-Wjj" customClass="Icons" customModule="MobileLabARKit" customModuleProvider="target">
+                                <rect key="frame" x="37" y="364" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VaZ-l5-hYJ" customClass="Icons" customModule="MobileLabARKit" customModuleProvider="target">
+                                <rect key="frame" x="243" y="364" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kar-cs-uRh">
+                                <rect key="frame" x="76" y="175" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="changeHue:" destination="BV1-FR-VrT" eventType="valueChanged" id="hlm-iC-fXT"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -233,7 +279,9 @@
                             <constraint firstItem="2OM-bU-tp4" firstAttribute="top" secondItem="aR7-8j-WbC" secondAttribute="top" id="2mp-rp-cZc"/>
                             <constraint firstItem="sB6-dr-j5d" firstAttribute="centerX" secondItem="QCs-B3-uqP" secondAttribute="centerX" id="6HL-Pc-AQR"/>
                             <constraint firstItem="aR7-8j-WbC" firstAttribute="bottom" secondItem="5G9-5t-FNO" secondAttribute="bottom" constant="30" id="Bbr-Iv-czu"/>
-                            <constraint firstItem="sB6-dr-j5d" firstAttribute="centerY" secondItem="RsA-Q2-h4J" secondAttribute="centerY" id="Ckz-s4-8eZ"/>
+                            <constraint firstItem="MhL-Z3-lw9" firstAttribute="leading" secondItem="RPj-Xl-b6k" secondAttribute="trailing" constant="85" id="CFT-HK-ozS"/>
+                            <constraint firstItem="sB6-dr-j5d" firstAttribute="centerY" secondItem="RsA-Q2-h4J" secondAttribute="centerY" constant="-20" id="Ckz-s4-8eZ"/>
+                            <constraint firstItem="MhL-Z3-lw9" firstAttribute="bottom" secondItem="RPj-Xl-b6k" secondAttribute="bottom" id="FZw-OF-GV5"/>
                             <constraint firstItem="aR7-8j-WbC" firstAttribute="bottom" secondItem="RPj-Xl-b6k" secondAttribute="bottom" constant="30" id="FnT-Gx-0p9"/>
                             <constraint firstItem="WIN-cV-jRs" firstAttribute="top" secondItem="aR7-8j-WbC" secondAttribute="top" constant="20" id="KKC-wK-1tX"/>
                             <constraint firstItem="2OM-bU-tp4" firstAttribute="centerX" secondItem="QCs-B3-uqP" secondAttribute="centerX" id="RB1-ah-LcT"/>
@@ -241,20 +289,29 @@
                             <constraint firstItem="WIN-cV-jRs" firstAttribute="leading" secondItem="QCs-B3-uqP" secondAttribute="leadingMargin" id="n28-X4-OSG"/>
                             <constraint firstItem="RsA-Q2-h4J" firstAttribute="bottom" secondItem="aR7-8j-WbC" secondAttribute="bottom" id="pye-sO-7dd"/>
                             <constraint firstItem="RsA-Q2-h4J" firstAttribute="trailing" secondItem="aR7-8j-WbC" secondAttribute="trailing" id="qP1-38-MKl"/>
+                            <constraint firstItem="MhL-Z3-lw9" firstAttribute="centerX" secondItem="sB6-dr-j5d" secondAttribute="centerX" id="sIV-0S-RYH"/>
                             <constraint firstItem="RsA-Q2-h4J" firstAttribute="top" secondItem="QCs-B3-uqP" secondAttribute="top" id="t5J-J5-rH7"/>
                             <constraint firstItem="RPj-Xl-b6k" firstAttribute="centerX" secondItem="QCs-B3-uqP" secondAttribute="centerX" constant="-135" id="ung-ic-tGV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aR7-8j-WbC"/>
                     </view>
                     <connections>
+                        <outlet property="alphaMax" destination="LIE-uK-qfY" id="XBu-tI-Gqg"/>
+                        <outlet property="alphaMin" destination="WbJ-R2-gM0" id="gpo-Xl-bqL"/>
+                        <outlet property="alphaSlider" destination="mY7-BS-Ml6" id="e6G-aF-3pD"/>
+                        <outlet property="hueSlider" destination="Kar-cs-uRh" id="2lB-dl-0SR"/>
+                        <outlet property="hueSliderView" destination="pUq-Ej-3KR" id="YJm-p7-fPy"/>
                         <outlet property="modelAssetButtonView" destination="sB6-dr-j5d" id="Z7w-ry-yAM"/>
                         <outlet property="paintButton" destination="ibN-uq-wXq" id="AfN-oe-ZWZ"/>
                         <outlet property="paintButton2" destination="CfO-LQ-Qir" id="ndP-YR-p7f"/>
-                        <outlet property="paintButton2View" destination="CfO-LQ-Qir" id="GLN-af-hjo"/>
+                        <outlet property="paintButton2View" destination="MhL-Z3-lw9" id="CU5-sP-9KQ"/>
                         <outlet property="paintButtonView" destination="5G9-5t-FNO" id="Daq-vl-ktc"/>
                         <outlet property="photoButton" destination="Gli-Dd-ZND" id="eVC-WL-HUp"/>
                         <outlet property="photoSnapshotButtonView" destination="RPj-Xl-b6k" id="8bB-uw-W9P"/>
                         <outlet property="sceneView" destination="RsA-Q2-h4J" id="n7f-iJ-Wgb"/>
+                        <outlet property="sizeMax" destination="VaZ-l5-hYJ" id="r0l-hM-LFF"/>
+                        <outlet property="sizeMin" destination="id4-V1-Wjj" id="ss7-RX-Snk"/>
+                        <outlet property="sizeSlider" destination="FAD-eM-0Fi" id="eSj-zp-POf"/>
                         <outlet property="undoButton" destination="xSh-1g-iW5" id="qgi-3Q-5ql"/>
                         <outlet property="undoButtonView" destination="WIN-cV-jRs" id="p83-db-O3J"/>
                     </connections>

@@ -23,15 +23,25 @@ class ViewController: UIViewController {
 
     // Outlets for menu UI menu items.
     @IBOutlet weak var modelAssetButtonView: UIView!
-//    @IBOutlet weak var placementModeButtonView: UIView!
     @IBOutlet weak var photoSnapshotButtonView: UIView!
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var undoButtonView: UIView!
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var paintButtonView: UIView!
-    @IBOutlet weak var paintButton2View: UIButton!
+    @IBOutlet weak var paintButton2View: UIView!
     @IBOutlet weak var paintButton: UIButton!
     @IBOutlet weak var paintButton2: UIButton!
+    @IBOutlet weak var alphaSlider: UISlider!
+    @IBOutlet weak var sizeSlider: UISlider!
+    @IBOutlet weak var hueSliderView: UIView!
+    @IBOutlet weak var hueSlider: UISlider!
+    
+    
+    //icons
+    @IBOutlet weak var alphaMin: Icons!
+    @IBOutlet weak var alphaMax: Icons!
+    @IBOutlet weak var sizeMin: Icons!
+    @IBOutlet weak var sizeMax: Icons!
     
     // References to scenes.
     var mainScene: SCNScene!
@@ -54,14 +64,20 @@ class ViewController: UIViewController {
 
     // Array for ar anchor planes added to scene.
     var anchorPlanesInScene = [SCNNode]()
+    
     var timer: Timer!
+    
+    //Toggle for continuous painting
     var startPaint = false
+    
+    var setAlpha:Float = 0.5
+    var setSize:Float = 0.5
+    var setHue:Float = 0.5
 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -69,13 +85,11 @@ class ViewController: UIViewController {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = false
 
-
         // Main scene of project.
         mainScene = SCNScene(named: "art.scnassets/main_scene.scn")!
 
         // Set the scene to the view
         sceneView.scene = mainScene
-
 
         // Scene for model assets.
         modelAssetScene = SCNScene(named: "art.scnassets/model_asset_scene.scn")!
@@ -83,26 +97,21 @@ class ViewController: UIViewController {
         // Set current selected model.
         currentModelAsset = modelAssetScene.rootNode.childNode(withName: modelAssets.currentElement!.nodeName, recursively: true)
 
+       
+
+
+//        let fade = SKAction.fadeOpacity(by: -0.1, duration: 1)
+//        let remove = SKAction.run(self.removeFromParent())
+//        let sequence = SKAction.sequence([fade,remove])
+//        modelAssets.run(sequence)
         
-//         Setup tap gesture for screen.
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-//        sceneView.addGestureRecognizer(tapGesture)
-//        let holdGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongTap))
-//        sceneView.addGestureRecognizer(holdGesture)
 
         
-//        photoSnapshotButtonView.frame.size.width = sceneView.bounds.width * 0.15
-//        photoSnapshotButtonView.clipsToBounds = true
-//        photoSnapshotButtonView.layer.cornerRadius = photoSnapshotButtonView.bounds.width/2
-//        photoButton.frame.size.width = photoSnapshotButtonView.bounds.width * 0.9
-//        photoButton.setImage(UIImage(named: "camera_icon.png"), for: .normal)
-//        photoButton.imageView?.contentMode = .scaleAspectFill
-//        photoButton.tintColor = .black
-//        undoButton.frame.size.width = undoButtonView.bounds.width * 0.75
-//        undoButton.imageView?.contentMode = .scaleAspectFill
-//        undoButton.setImage(UIImage(named: "back_icon.png"), for: .normal)
-//        undoButton.tintColor = .black
-
+//        let fade = SCNAction.fadeOpacity(by: -0.1, duration: 1)
+//        let remove = SCNAction.run(self.removeFromParent())ww
+//        let sequence = SCNAction.sequence([fade,remove])
+        
+    
         
     }
 
@@ -126,7 +135,7 @@ class ViewController: UIViewController {
         // Start the view's AR session with a configuration that uses the rear camera,
         // device position and orientation tracking, and plane detection.
         let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = [.horizontal]
+//        configuration.planeDetection = [.horizontal]
         sceneView.session.run(configuration)
         
         // Set a delegate to track the number of plane anchors for providing UI feedback.
@@ -159,8 +168,24 @@ class ViewController: UIViewController {
         paintButton2.backgroundColor = .blue
         paintButton2.clipsToBounds = true
         paintButton2.layer.cornerRadius = 22
+        
+        //set slider icons
+        alphaMax.backgroundColor = .clear
+        alphaMin.backgroundColor = .clear
+        alphaMin.forAlpha = true
+        sizeMax.backgroundColor = .clear
+        sizeMin.backgroundColor = .clear
+        sizeMin.forSizes = true
+        
+        //set hue slider
+        let imgView = UIImageView()
+        imgView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        imgView.image = UIImage(named: "color slide.png")
+        hueSliderView.addSubview(imgView)
+        
     }
     
+    //view will disappear
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -168,84 +193,33 @@ class ViewController: UIViewController {
         sceneView.session.pause()
     }
 
+    //start painting
     @IBAction func touchDown(_ sender: Any) {
-//       print("down")
         startPaint = true
      keepPaint()
-
     }
-    
+    //end paintint
     @IBAction func touchUp(_ sender: Any) {
-//        print("up")
         startPaint = false
-
-
     }
     
-    
-
-    //    @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
-//        startPaint = true
-//
-//        if startPaint{
-////        paint()
-////            print("tap")
-//
-//        }
-//
-//        if recognizer.state == .ended {
-//            startPaint = false
-//            print("end tap")
-//        }
-//    }
-//    @objc func handleLongTap(_ recognizer: UITapGestureRecognizer) {
-//
-//        startPaint = true
-//        if startPaint{
-////            paint()
-//
-//      print("holding")
-//    }
-//        if recognizer.state == .ended {
-//            startPaint = false
-//            print("end holding")
-//        }
-////        keepPaint()
-////        paint(UITapGestureRecognizer.location)
-////
-//    }
-    
+    //continue painting
     func keepPaint(){
-//        print("start paint")
         if startPaint { DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             self.paint()
             self.keepPaint()
         }}
-        
     }
 
 
-
+    //painting single unit
     func paint() {
-//        print("paint")
-
-        // Get tapped location in scene.
-//        let location = recognizer.location(in: sceneView)
-//        print(location)
-    ///////////////////////////////////////////////////////////////////////
-        // Handle object tap.
-//        let sceneHitTestResult = sceneView.hitTest(location, options: nil)
-//        if !sceneHitTestResult.isEmpty {
-//            let hit = sceneHitTestResult.first!
-//        
-//            print("Tapping: \(hit.node.name!)")
-//        }
-
-// Don't place any objects menu is hidden.
+        
+        //dont paint if menu is hidden
         if isMenuHidden {
             return
         }
-
+        
         // Get point of view
         guard let pov = sceneView.pointOfView else {
             return
@@ -261,12 +235,14 @@ class ViewController: UIViewController {
             // Position and rotate relative to camera point of view.
             modelAsset.simdPosition = pov.simdPosition + pov.simdWorldFront * 0.1
             modelAsset.simdRotation = pov.simdRotation
-            
+        
             modelAsset.name = modelAssets.currentElement!.name
 
             sceneView.scene.rootNode.addChildNode(modelAsset);
             
             modelsInScene.append(modelAsset)
+        
+        //remove model if over 2000
         
     }
     
@@ -274,11 +250,32 @@ class ViewController: UIViewController {
     @IBAction func handleModelAssetButton(_ sender: UIButton) {
         let modelAsset = modelAssets.cycle()!
         currentModelAsset = modelAssetScene.rootNode.childNode(withName: modelAsset.nodeName, recursively: true)
+        
+
         sender.setTitle(modelAsset.name, for: .normal)
 
 //        let placementLabel = isSpacePlacement ? "Space" : "Plane"
     }
+    //slider to change alpha
+    @IBAction func changeAlpha(_ sender: Any) {
+        setAlpha = alphaSlider.value
+        currentModelAsset.opacity = CGFloat(setAlpha)
+        
 
+    }
+    //slider to change size
+    @IBAction func changeSize(_ sender: Any) {
+//        let modelAsset = modelAssets.cycle()!
+        setSize = sizeSlider.value
+        currentModelAsset.simdScale = simd_float3(setSize)
+
+    }
+    
+    @IBAction func changeHue(_ sender: Any) {
+        setHue = hueSlider.value
+//        currentModelAsset
+    }
+    
     
     @IBAction func handlePhotoSnapshot(_ sender: UIButton) {
         // Get point of view
@@ -321,11 +318,14 @@ class ViewController: UIViewController {
         modelAssetButtonView.isHidden     = isMenuHidden
         undoButtonView.isHidden           = isMenuHidden
         photoSnapshotButtonView.isHidden  = isMenuHidden
+        sizeSlider.isHidden           = isMenuHidden
+        alphaSlider.isHidden          = isMenuHidden
+        
     
         // Hide/Show are ar anchor planes.
-        for anchorPlane in anchorPlanesInScene {
-            anchorPlane.isHidden = isMenuHidden
-        }
+//        for anchorPlane in anchorPlanesInScene {
+//            anchorPlane.isHidden = isMenuHidden
+//        }
     }
 
 }
@@ -360,8 +360,12 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
          */
         node.addChildNode(planeNode)
 
+        //test
+        planeNode.isHidden = true
+        
         // Save all plane nodes.
         anchorPlanesInScene.append(planeNode)
+        
     }
     
     /// - Tag: UpdateARContent
@@ -388,17 +392,20 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
     // MARK: - ARSessionDelegate
     
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
-        guard let frame = session.currentFrame else { return }
-        updateSessionInfoLabel(for: frame, trackingState: frame.camera.trackingState)
+        print("did add")
+//        guard let frame = session.currentFrame else { return }
+//        updateSessionInfoLabel(for: frame, trackingState: frame.camera.trackingState)
     }
     
     func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {
-        guard let frame = session.currentFrame else { return }
-        updateSessionInfoLabel(for: frame, trackingState: frame.camera.trackingState)
+        print("did remove")
+
+//        guard let frame = session.currentFrame else { return }
+//        updateSessionInfoLabel(for: frame, trackingState: frame.camera.trackingState)
     }
     
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
-        updateSessionInfoLabel(for: session.currentFrame!, trackingState: camera.trackingState)
+//        updateSessionInfoLabel(for: session.currentFrame!, trackingState: camera.trackingState)
     }
     
     // MARK: - ARSessionObserver
@@ -422,6 +429,8 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
     
     // MARK: - Private methods
     
+    /*
+     //updateSessionInfoLabel
     private func updateSessionInfoLabel(for frame: ARFrame, trackingState: ARCamera.TrackingState) {
         // Update the UI to provide feedback on the state of the AR experience.
         let message: String
@@ -454,6 +463,7 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
 //        sessionInfoLabel.text = message
 //        sessionInfoView.isHidden = message.isEmpty
     }
+     */
     
     private func resetTracking() {
         let configuration = ARWorldTrackingConfiguration()
